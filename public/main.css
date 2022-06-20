@@ -1,0 +1,112 @@
+@font-face {
+	font-family: Raleway;
+	src: local("Raleway"),
+		 url("fonts/raleway_thin-webfont.eot"),
+		 url("fonts/raleway_thin-webfont.svg") format("svg"),
+		 url("fonts/raleway_thin-webfont.woff")	format("woff"),
+		 url("fonts/raleway_thin-webfont.ttf");
+	font-weight: normal;
+}
+* {
+	font-family: 'Raleway', sans-serif;
+}
+input {
+	font-size: 16px;
+}
+#dropzone {
+	/*background: red;*/
+	width: 100px;
+	height: 100px;
+	border: 3px dashed gray;
+}
+#preview {
+	border: 3px solid red;
+}
+#canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 600px;
+	background: black;
+	opacity: 0;
+}
+#bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 600px;
+	background: black;
+	color: white;
+	text-align: center;
+	line-height: 600px;
+}
+#tools {
+	position: absolute;
+	top: 0;
+	left: 600px;
+	width: 200px;
+	height: 600px;
+	background: gray;
+	padding: 20px;
+	box-sizing: border-box;
+}
+input[type=button], select {
+	background: rgba(255,255,255,0.75);
+	padding: 5px 10px;
+	border: none;
+	cursor: pointer;
+	width: 160px;
+	text-align: center;
+}
+input[type=button]:hover {
+	background: rgba(255,255,255,0.95);
+}
+.line {
+	margin-bottom: 5px;
+}
+
+.button {
+	background: rgba(255,255,255,0.5);
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 10px;
+}
+.button:hover {
+	background: rgba(255,255,255,0.75);
+}
+
+*.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.modal {
+	position: fixed;
+	top: 50px;
+	width: 400px;
+	padding: 20px;
+	background: navy;
+	left: 50%;
+	margin-left: -200px;
+	display: none;
+}
+#url {
+	font-size: 20px;
+	width: 360px;
+}
+
+.secret {
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.header {
+	font-weight: bold;
+}

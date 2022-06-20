@@ -1,0 +1,19 @@
+{
+  "name": "turbo-token",
+  "version": "0.1.0",
+  "description": "a little node app to load images from a url and package them as tokens for VTT applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

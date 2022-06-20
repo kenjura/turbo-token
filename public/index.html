@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="main.css" />
+	<script src="main.js"></script>
+</head>
+<body onload="init()">
+	<div id="bg">drop image here</div>
+	<canvas id="canvas" class="unselectable" width="600" height="600" ondragover="handleDragOver(event)" ondragend="handleDragEnd(event)" ondrop="handleDrop(event)">
+	</canvas>
+	<div id="tools">
+		<div class="line">
+			<div class="header">Outline Color</div>
+			<select id="colorSelector" onchange="render()">
+				<option>green</option>
+				<option>red</option>
+				<option>yellow</option>
+				<option>gray</option>
+			</select>
+		</div>
+		<div class="background">
+			<div class="header">Background Color</div>
+			<select id="bgSelector" onchange="render()">
+				<option>black</option>
+				<option>white</option>
+			</select>
+		</div>
+		
+		<div class="header">Input</div>
+		<div class="line"><input type="button" value="load from url" onclick="loadFromURL()" /></div>
+		<div class="line"><input type="button" value="load from disk" onclick="loadFromDisk()" /></div>
+		
+		<div class="header">Output</div>
+		<div class="line"><input type="button" value="generate image" onclick="save()" /></div>
+		<div class="line"><input type="button" value="save to dropbox" onclick="saveToDropbox()" disabled /></div>
+
+		<div class="secret">
+			<input type="file" id="fileInput" onchange="loadFromDisk(this.files[0])" />
+			<a id="link" style="visibility: hidden;"></a>
+		</div>
+	</div>
+
+	<div id="loadFromURL" class="modal">
+		<input id="url" onkeyup="loadFromURL(this.value,event)" onmousedown="this.value=''" value="paste url here" />
+		<div class="button" onclick="document.getElementById('loadFromURL').style.display='none';">cancel</div>
+	</div>
+
+	<div id="saveToDropboxModal" class="modal">
+		<input id="saveToDropbox_fileName" onmousedown="this.value=''" value="enter filename" onkeydown="if(event.keyCode==13) saveToDropbox({fileName:g('saveToDropbox_fileName').value});" />
+		<div class="button" onclick="hide('saveToDropboxModal')">cancel</div>
+		<div class="button right" onclick="saveToDropbox({fileName:g('saveToDropbox_fileName').value})">save</div>
+	</div>
+</body>
+</html>
